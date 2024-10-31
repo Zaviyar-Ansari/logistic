@@ -7,36 +7,55 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';  // Search icon
 
 const Navbar = () => {
   return (
-    <div className=' text-white flex flex-row justify-start'>
-        <div className='w-[60vh] bg-primary2'>
-            <h1 className='text-center text-4xl font-Kumbh font-bold py-14 px-4'>LOGISTIC</h1>
-        </div>
-        <div className='w-full'>
-            <div className='flex flex-row justify-between gap-x-3 bg-primary1'>
-                <div className='px-5 flex gap-x-10'>
-                <p  className='text-gray-400 text-xl py-4'><FontAwesomeIcon icon={faPhone} className="text-gray-100 text-3xl" />  +44 20 7930 8205</p>
-                <p className='text-gray-400 text-xl py-4'><FontAwesomeIcon icon={faMapMarkerAlt} className="text-gray-100 text-3xl" />  450 Strand, Charing Cross, PK
-                </p>
-                </div>
-                <div className='flex gap-x-5 px-5'>
-                <FontAwesomeIcon icon={faFacebook} className="text-gray-100 text-3xl py-4" />
-                <FontAwesomeIcon icon={faTwitter} className="text-gray-100 text-3xl py-4 " />
-                <FontAwesomeIcon icon={faLinkedin} className="text-gray-100 text-3xl py-4" />
-                </div>
-            </div>
-            <div className='flex flex-row justify-between bg-white '>
-                <ul className='flex flex-row justify-start gap-x-10 py-7 text-black px-10 font-bold font-Inter'>
-                    <li className='hover:underline-offset-1 hover:text-primary2 hover:underline'>HOME</li>
-                    <li className='hover:underline-offset-1 hover:text-primary2 hover:underline'>SERVICES</li>
-                    <li className='hover:underline-offset-1 hover:text-primary2 hover:underline'>CARRER</li>
-                    <li className='hover:underline-offset-1 hover:text-primary2 hover:underline'>TRACKING</li>
-                    <li className='hover:underline-offset-1 hover:text-primary2 hover:underline'>ABOUT</li>
-                    <li className='hover:underline-offset-1 hover:text-primary2 hover:underline'>CONTACT US</li>
-                </ul>
-                <FontAwesomeIcon icon={faSearch} className="text-gray-600 text-2xl hover:text-gray-800 cursor-pointer px-10 py-7" />
-            </div>
-        </div>
+    <div className="flex text-white relative">
+    {/* Black Background Filler */}
+    <div className="absolute w-[40vh] h-[62px] bg-gray-800" style={{ clipPath: 'polygon(90% 0, 100% 0, 100% 100%, 90% 100%)' }} />
+    {/* Left Orange Box with Right Side Tilt */}
+    <div
+      className="w-[40vh] bg-orange-500 relative"
+      style={{
+        clipPath: 'polygon(0 0, 100% 0, 90% 100%, 0% 100%)',
+        zIndex: 10, // Bring it above the black background
+      }}
+    >
+      <h1 className="text-center text-4xl font-bold py-14 px-4">
+        LOGISTIC
+      </h1>
     </div>
+  
+    {/* Right Side with Contact Info */}
+    <div className="flex-1">
+      <div className="flex justify-between items-center bg-gray-800 py-4 px-6">
+        <div className="flex items-center gap-x-6">
+          <p className="text-gray-400 text-xl flex items-center gap-2">
+            <FontAwesomeIcon icon={faPhone} className="text-gray-100 text-3xl" /> +44 20 7930 8205
+          </p>
+          <p className="text-gray-400 text-xl flex items-center gap-2">
+            <FontAwesomeIcon icon={faMapMarkerAlt} className="text-gray-100 text-3xl" /> 450 Strand, Charing Cross, PK
+          </p>
+        </div>
+        <div className="flex gap-x-4">
+          <FontAwesomeIcon icon={faFacebook} className="text-gray-100 text-2xl" />
+          <FontAwesomeIcon icon={faTwitter} className="text-gray-100 text-2xl" />
+          <FontAwesomeIcon icon={faLinkedin} className="text-gray-100 text-2xl" />
+        </div>
+      </div>
+  
+      {/* Navigation Menu */}
+      <div className="flex justify-between items-center bg-white py-4 px-10">
+        <ul className="flex space-x-8 font-semibold text-black">
+          <li className="hover:text-orange-500">HOME</li>
+          <li className="hover:text-orange-500">SERVICES</li>
+          <li className="hover:text-orange-500">CAREER</li>
+          <li className="hover:text-orange-500">TRACKING</li>
+          <li className="hover:text-orange-500">ABOUT</li>
+          <li className="hover:text-orange-500">CONTACT US</li>
+        </ul>
+        <FontAwesomeIcon icon={faSearch} className="text-gray-600 text-2xl hover:text-gray-800 cursor-pointer" />
+      </div>
+    </div>
+  </div>
+  
   )
 }
 
